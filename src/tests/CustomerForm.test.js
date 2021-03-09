@@ -7,6 +7,7 @@ describe('CustomerForm', () => {
 
     const form = id => container.querySelector(`form[id="${id}"]`);
     const field = name => form('customerForm').elements[name];
+    const firstNameField = () => form('customerForm').elements.firstName;
     const label = formElement => container.querySelector(`label[for="${formElement}"]`);
 
     // Check type of input field is text
@@ -35,5 +36,10 @@ describe('CustomerForm', () => {
         render(<CustomerForm />);
         expect(label('firstName')).not.toBeNull();
         expect(label('firstName').textContent).toEqual('First name');
+    });
+    // Test assigns id to match label id
+    it('assigns an id to match the label id for firstName', () => {
+        render(<CustomerForm />);
+        expect(firstNameField().id).toEqual('firstName');
     });
 });

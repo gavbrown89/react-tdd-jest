@@ -9,6 +9,7 @@ export const CustomerForm = () => {
             <Form.Group>
                 <Form.Label htmlFor="firstName">First name</Form.Label>
                 <Form.Control 
+                    id="firstName"
                     type="text" 
                     name="firstName" 
                 />
