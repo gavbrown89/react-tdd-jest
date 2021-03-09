@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactTestUtils from 'react-dom/test-utils';
 import { createContainer } from './DomManipulators';
 import { CustomerForm } from '../components/CustomerForm';
 
@@ -41,5 +42,15 @@ describe('CustomerForm', () => {
     it('assigns an id to match the label id for firstName', () => {
         render(<CustomerForm />);
         expect(firstNameField().id).toEqual('firstName');
+    });
+    it('saves existing firstName value on submit', async () => {
+        render(<CustomerForm 
+            firstName="John"
+            onSubmit={({ firstName }) => {
+                expect(firstName).toEqual('John')
+            }}
+        />
+        );
+        await ReactTestUtils.Simulate.submit(form('customerForm'));
     });
 });
