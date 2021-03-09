@@ -4,15 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/runtime": "^7.13.10",
     "bootstrap": "^4.6.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.5.1",
     "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "@babel/preset-react": "^7.12.13",
+    "babel-loader": "^8.2.2",
+    "jest": "^26.6.3",
+    "webpack": "^5.24.4",
+    "webpack-cli": "^4.5.0"
   }
 }
