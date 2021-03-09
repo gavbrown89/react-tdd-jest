@@ -5,6 +5,8 @@ import {
 
 export const CustomerForm = () => {
     return (
-        <Form id="customerForm" />
+        <Form id="customerForm">
+            <Form.Control type="text" name="firstName" />
+        </Form>
     );
 };
