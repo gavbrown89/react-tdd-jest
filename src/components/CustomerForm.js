@@ -6,7 +6,13 @@ import {
 export const CustomerForm = () => {
     return (
         <Form id="customerForm">
-            <Form.Control type="text" name="firstName" />
+            <Form.Group>
+                <Form.Label htmlFor="firstName">First name</Form.Label>
+                <Form.Control 
+                    type="text" 
+                    name="firstName" 
+                />
+            </Form.Group>
         </Form>
     );
 };

@@ -7,7 +7,8 @@ describe('CustomerForm', () => {
 
     const form = id => container.querySelector(`form[id="${id}"]`);
     const field = name => form('customerForm').elements[name];
-    
+    const label = formElement => container.querySelector(`label[for="${formElement}"]`);
+
     // Check type of input field is text
     const expectTextInputField = formElement => {
         expect(formElement).not.toBeNull();
@@ -25,8 +26,14 @@ describe('CustomerForm', () => {
         expect(form('customerForm')).not.toBeNull();
     });
     // Test firstName input field exists
-    it('renders a text input field', () => {
+    it('renders a text input field for firstName', () => {
         render(<CustomerForm />);
         expectTextInputField(field('firstName'));
+    });
+    // Test firstName label
+    it('renders a label for firstName', () => {
+        render(<CustomerForm />);
+        expect(label('firstName')).not.toBeNull();
+        expect(label('firstName').textContent).toEqual('First name');
     });
 });
