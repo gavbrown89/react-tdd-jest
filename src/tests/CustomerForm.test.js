@@ -22,6 +22,18 @@ describe('CustomerForm', () => {
         ({ render, container } = createContainer());
     });
 
+    // Input types
+    const itRendersATextBox = (fieldName) => {
+        it('renders a text box', () => {
+            render(<CustomerForm />);
+            expectTextInputField(field(fieldName));
+        });
+    }
+
+    describe('first name field', () => {
+        itRendersATextBox('firstName');
+    });
+
     // Test form is not null
     it('renders a form', () => {
         render(<CustomerForm />);
